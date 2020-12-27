@@ -1,0 +1,15 @@
+[default]
+DEBUG = false
+SQLALCHEMY_DATABASE_URI = 'sqlite:///development.db'
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+TITLE = 'my-finance'
+SECRET_KEY = '9ae6af1bc9a7d397d19fd0a8f3069838'
+EXTENSIONS = [
+  "myfinance.ext.database:init_app",
+  "myfinance.ext.commands:init_app",
+  "myfinance.blueprints.restapi:init_app"
+]
+
+[development]
+EXTENSIONS = ["dynaconf_merge_unique"]
+DEBUG = true
